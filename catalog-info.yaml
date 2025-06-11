@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-azure-runner-image-gitops
+  description: This is GitOps manifest for go-azure-runner-image   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-azure-runner-image
+    backstage.io/kubernetes-id: go-azure-runner-image 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: lucarval-rhtap/go-azure-runner-image-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: lucarval-rhtap.go-azure-runner-image-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-azure-runner-image
