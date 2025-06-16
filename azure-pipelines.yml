@@ -13,7 +13,8 @@ pool:
   name: rhtap-testing
 
 container:
-  image: quay.io/redhat-appstudio/rhtap-task-runner:latest
+  #image: quay.io/redhat-appstudio/rhtap-task-runner:latest
+  image: quay.io/lucarval/tssc-dev-multi-ci:1.6-sbom
   options: --privileged
 
 # Using 'rhtap' variable group by default
